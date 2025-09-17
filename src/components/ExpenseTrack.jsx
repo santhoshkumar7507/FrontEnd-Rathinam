@@ -27,7 +27,7 @@ export default function ExpenseTrack() {
    
    const addExpense = (title, amount,id) => {
    if (id) {
-      axios.put(`http://localhost:3001/api/${id}`, { title, amount: Number(amount) })
+      axios.put(`https://backend-rathinam-61uq.onrender.com${id}`, { title, amount: Number(amount) })
         .then((res) => {
           const updatedList = expenses.map((exp) =>
             exp._id === id ? res.data : exp
