@@ -12,7 +12,7 @@ export default function ExpenseTrack() {
     const [expenses, setExpenses] = useState(EXPENSES);
    const [itemToEdit,setItemToEdit] =useState(null);
       useEffect(()=>{
-      axios.get("http://localhost:3001/api/getdata")
+      axios.get("https://backend-rathinam-uvI5.onrender.com/api/getdata")
     .then((res) => setExpenses(res.data))
     .catch((err) => console.error("Fetch error:", err));
       },[])
@@ -27,7 +27,7 @@ export default function ExpenseTrack() {
    
    const addExpense = (title, amount,id) => {
    if (id) {
-      axios.put(`http://localhost:3001/api/${id}`, { title, amount: Number(amount) })
+      axios.put(`https://backend-rathinam-uvI5.onrender.com/api/${id}`, { title, amount: Number(amount) })
         .then((res) => {
           const updatedList = expenses.map((exp) =>
             exp._id === id ? res.data : exp
@@ -44,7 +44,7 @@ export default function ExpenseTrack() {
   }
   };
     const deleteExpense = (id) => {
-      axios.delete(`http://localhost:3001/api/${id}`)
+      axios.delete(`https://backend-rathinam-uvI5.onrender.com/api/${id}`)
       .then(() => setExpenses(expenses.filter((exp) => exp._id !== id)))
       .catch((err) => console.error("Delete error:", err)); 
   };
