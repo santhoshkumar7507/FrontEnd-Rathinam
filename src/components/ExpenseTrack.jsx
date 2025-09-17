@@ -20,7 +20,7 @@ export default function ExpenseTrack() {
 
 
    /*  useEffect(() => {
-    axios.get("http://localhost:3001/api/getdata")
+    axios.get("https://backend-rathinam-61uq.onrender.com")
       .then((res) => setExpenses(res.data))
       .catch((err) => console.error("Fetch error:", err));
   }, []) */
